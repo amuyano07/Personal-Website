@@ -1,6 +1,7 @@
+/* --- Global Styles & Typography --- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,19 +11,22 @@
     font-family: 'Poppins', sans-serif;
 }
 
-html{
+html {
     font-size: 62.5%;
     scroll-behavior: smooth;
 }
 
-body{
+body {
     width: 100%;
     overflow-x: hidden;
     background-color: black;
     color: white;
 }
 
-header{
+span { color: #b74b4b; }
+
+/* --- Layout Components --- */
+header {
     margin-top: 20px;
     position: fixed;
     top: 0;
@@ -37,7 +41,7 @@ header{
     z-index: 100;
 }
 
-nav a{
+nav a {
     font-size: 1.8rem;
     color: white;
     margin-left: 3rem;
@@ -46,18 +50,24 @@ nav a{
     border-bottom: 3px solid transparent;
 }
 
-nav a:hover,
-nav a.active{
+nav a:hover, nav a.active {
     color: #b74b4b;
     border-bottom: 3px solid #b74b4b;
 }
 
-section{
+section {
     min-height: 100vh;
     padding: 10rem 9% 5rem;
 }
 
-.home{
+.heading {
+    font-size: 5rem;
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+/* --- Home Section --- */
+.home {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,39 +75,19 @@ section{
     background-color: black;
 }
 
-.home .home-content h1{
-    font-size: 6rem;
-    font-weight: 700;
-    line-height: 1.3;
-}
+.home-content h1 { font-size: 6rem; font-weight: 700; line-height: 1.3; }
+.home-content h3 { font-size: 4rem; margin-bottom: 1rem; font-weight: 700; }
+.home-content p { font-size: 1.6rem; margin-bottom: 2rem; line-height: 1.6; }
 
-span{
-    color: #b74b4b;
-}
-
-.home-content h3{
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-}
-
-.home-content p{
-    font-size: 1.6rem;
-    margin-bottom: 2rem;
-    line-height: 1.6;
-}
-
-.home-img img{
+.home-img img {
     width: 32vw;
     border-radius: 50%;
     transition: 0.2s linear;
 }
 
-.home-img img:hover{
-    box-shadow: 0 0 40px #b74b4b;
-}
+.home-img img:hover { box-shadow: 0 0 40px #b74b4b; }
 
-.social-icons a{
+.social-icons a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -111,14 +101,14 @@ span{
     color: #b74b4b;
 }
 
-.social-icons a:hover{
+.social-icons a:hover {
     color: black;
     transform: scale(1.3) translateY(-5px);
     background-color: #b74b4b;
     box-shadow: 0 0 25px #b74b4b;
 }
 
-.btn{
+.btn {
     display: inline-block;
     padding: 1rem 2.8rem;
     border-radius: 4rem;
@@ -130,52 +120,110 @@ span{
     transition: 0.3s ease;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: #b74b4b;
     color: black;
     box-shadow: 0 0 25px #b74b4b;
 }
 
-.typing-text span::before{
-    content: "Immersion Trainee";
-    color: #b74b4b;
+/* --- Typing Animation --- */
+.typing-text span::before {
+    content: "";
     animation: words 20s infinite;
 }
 
-@keyframes words{
-    0%, 20%{ content: "Aspiring Developer"; }
-    21%, 40%{ content: "UI/UX Designer"; }
-    41%, 60%{ content: "Problem Solver"; }
-    61%, 80%{ content: "Tech Innovator"; }
-    81%, 100%{ content: "BSIT Student"; }
+@keyframes words {
+    0%, 20% { content: "Aspiring Developer"; }
+    21%, 40% { content: "UI/UX Designer"; }
+    41%, 60% { content: "Problem Solver"; }
+    61%, 80% { content: "Tech Innovator"; }
+    81%, 100% { content: "BSIT Student"; }
 }
 
-/* Portfolio Tabs & Grid Styling */
+/* --- About Section (Unified) --- */
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #080808;
+}
+
+.about-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 0;
+}
+
+.about-img { flex: 0 0 320px; }
+
+.about-img img {
+    width: 100%;
+    height: 480px; 
+    object-fit: cover;
+    border-radius: 40px;
+    border: 2px solid #b74b4b;
+    box-shadow: 0 0 20px rgba(183, 75, 75, 0.4);
+    transition: 0.4s ease;
+}
+
+.about-img img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 35px rgba(183, 75, 75, 0.6);
+}
+
+.about-content { flex: 1; text-align: left; }
+.about-content h2.heading { text-align: left; margin-bottom: 2rem; }
+.about-content p { font-size: 1.6rem; line-height: 1.6; margin-bottom: 2rem; color: #ccc; }
+
+.personal-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 2.5rem;
+}
+
+.personal-info strong { color: #b74b4b; font-weight: 600; }
+
+.interest-icons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.interest-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    color: #b74b4b;
+    font-size: 2.8rem;
+    transition: 0.3s ease;
+}
+
+.interest-item span { font-size: 1.2rem; color: #fff; font-weight: 500; }
+.interest-item:hover { transform: translateY(-5px); text-shadow: 0 0 10px #b74b4b; }
+
+/* --- Portfolio & Education --- */
 .portfolio-tabs {
     display: flex;
     justify-content: center;
     background: #111;
     padding: 1rem;
     border-radius: 1.5rem;
-    margin-bottom: 4rem;
+    margin: 0 auto 4rem;
     gap: 2rem;
-    width: 100%;
     max-width: 800px;
 }
 
-.tab-item {
-    cursor: pointer;
-    padding: 1.5rem 3rem;
-    text-align: center;
-    transition: 0.3s;
-    border-radius: 1rem;
-    color: #888;
-}
-
+.tab-item { cursor: pointer; padding: 1.5rem 3rem; text-align: center; transition: 0.3s; border-radius: 1rem; color: #888; }
 .tab-item i { font-size: 2.2rem; display: block; margin-bottom: 0.5rem; }
 .tab-item.active { background: #1a1a1a; color: #b74b4b; }
 
-.portfolio-grid { display: none; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; width: 100%; }
+.portfolio-grid { display: none; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
 .portfolio-grid.active { display: grid; }
 
 .grid-card {
@@ -189,286 +237,13 @@ span{
 .grid-card:hover { border-color: #b74b4b; transform: translateY(-5px); }
 .grid-card img { width: 100%; border-radius: 1rem; aspect-ratio: 16/9; object-fit: cover; }
 .grid-card h3 { font-size: 2.2rem; color: #b74b4b; margin: 1.5rem 0; }
-.grid-card p { font-size: 1.4rem; line-height: 1.6; color: #ccc; }
 
-.btn-sm { background: #b74b4b; color: black; padding: 0.8rem 1.5rem; border-radius: 0.5rem; font-weight: 600; font-size: 1.2rem; }
-.btn-sm.secondary { background: #333; color: white; cursor: default; }
-.detail-link { color: #b74b4b; font-weight: 600; font-size: 1.3rem; }
-
-.card-icon-placeholder {
-    width: 100%; height: 180px; background: #222; border-radius: 1rem;
-    display: flex; align-items: center; justify-content: center; font-size: 5rem; color: #b74b4b;
-}
-
-.edu-card { text-align: left; }
-.card-icon { font-size: 3rem; color: #b74b4b; margin-bottom: 1.5rem; }
-.badge { background: rgba(183, 75, 75, 0.2); color: #b74b4b; padding: 0.5rem 1rem; border-radius: 0.5rem; font-size: 1.2rem; display: inline-block; margin-top: 1rem; }
-
-.skill-card { text-align: center; background: #111; padding: 3rem; border-radius: 1.5rem; border: 1px solid #222; }
-.skill-card i { font-size: 4rem; color: #b74b4b; margin-bottom: 1rem; display: block; }
-.skill-card span { font-size: 1.6rem; }
-
-/* Sections Styling */
-.content-section { display: flex; flex-direction: column; align-items: center; background-color: #080808; border-top: 1px solid #1a1a1a; }
-.heading { font-size: 5rem; margin-bottom: 5rem; text-align: center; }
-.card-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem; width: 100%; max-width: 1200px; }
-.card { background-color: #161616; padding: 3rem; border-radius: 2rem; flex: 1 1 300px; transition: 0.3s ease; border: 2px solid transparent; }
-.card:hover { border: 2px solid #b74b4b; transform: translateY(-5px); }
-.card h3 { font-size: 2.5rem; color: #b74b4b; margin-bottom: 1rem; }
-
-.about-flex-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6rem;
-    flex-wrap: nowrap; 
-}
-
-.about-image-side {
-    flex: 1;
-    max-width: 500px;
-}
-
-.about-image-side img {
-    width: 100%;
-    border-radius: 2rem;
-    border: 1px solid #222;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-.about-text-side {
-    flex: 1.2;
-    text-align: left; 
-    background: transparent; 
-    border: none;
-}
-
-.about-text-side h3 {
-    font-size: 4rem;
-    margin-bottom: 2rem;
-}
-
-.about-text-side p {
-    font-size: 1.6rem;
-    line-height: 1.8;
-    color: #ccc;
-    margin-bottom: 2.5rem;
-}
-
-/* Quote box styling from the reference image */
-.quote-box {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid #333;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    font-style: italic;
-    color: #888;
-    text-align: center;
-    font-size: 1.4rem;
-}
-
-/* Responsive adjustment for Mobile */
-@media (max-width: 991px) {
-    .about-flex-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .about-text-side {
-        text-align: center;
-    }
-}
-.contact-container {
-    display: flex;
-    justify-content: center; /* Centers the content box */
-    align-items: center;
-    max-width: 800px; /* Narrowed slightly since the form is gone */
-    width: 100%;
-    margin: 0 auto;
-    background: #0f0f0f;
-    padding: 6rem; /* Increased padding for a balanced look */
-    border-radius: 1rem;
-    border: 1px solid #222; /* Ensures the border is visible */
-}
-
-/* Red accent on labels when hovering the container */
-.contact-container:hover {
-    border-color: #b74b4b;
-}
-
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-}
-
-.detail-item {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    font-size: 1.8rem; /* Slightly larger for readability */
-    margin-bottom: 1.5rem;
-    color: #fff;
-}
-
-.social-icons.mini a {
-    width: 3.5rem;
-    height: 3.5rem;
-    font-size: 1.6rem;
-    margin: 1rem 1rem 2rem 0;
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .contact-container {
-        flex-direction: column;
-        padding: 2rem;
-    }
-    
-    .contact-title {
-        font-size: 3.5rem;
-    }
-    
-    .form-btn-container {
-        justify-content: center; /* Centers button on mobile */
-    }
-}
-/* --- style.css (Replicated About styling based on video reference) --- */
-
-/* Ensures the about section uses the deep dark background from your CSS */
-.about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #080808; /* Deep black from your CSS */
-    padding: 10rem 9% 5rem; /* Existing base padding */
-}
-
-/* Two-column container for Image and Content */
-.about-container {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    padding: 2rem 0; /* Internal padding from reference image */
-    flex-wrap: wrap; /* Wraps cleanly on smaller screens */
-    width: 100%;
-    max-width: 1200px;
-}
-
-/* --- Column 1: The Image --- */
-.about-img {
-    flex: 1 1 30rem;
-    display: flex;
-    justify-content: center;
-}
-
-.about-img img {
-    width: 100%;
-    max-width: 320px; /* Video-like max width */
-    border-radius: 20px;
-    
-    /* Replicated visual: Red accent frame and shadow seen in the video */
-    border: 3px solid #b74b4b; 
-    box-shadow: 0 0 15px rgba(183, 75, 75, 0.3);
-    transition: 0.3s ease;
-}
-
-/* Slight hover effect on the frame like other buttons in your style */
-.about-img img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 25px rgba(183, 75, 75, 0.5);
-}
-
-/* --- Column 2: The Content --- */
-.about-content {
-    flex: 1 1 40rem;
-    color: white; /* Text color from your base CSS */
-}
-
-/* Left-aligned heading on about content like in video, uses your heading/span style */
-.about-content h2.heading {
-    text-align: left;
-    margin-bottom: 2rem;
-    font-size: 5rem; /* Heading size from video */
-}
-
-/* Base text color from your existing style */
-.about-content p {
-    font-size: 1.6rem;
-    margin-bottom: 2rem;
-    line-height: 1.6;
-}
-
-/* Internal grid for personal details */
-.personal-info {
-    margin: 2rem 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-}
-
-.personal-info p {
-    font-size: 1.6rem;
-    color: #ccc; /* Subtler white from video */
-}
-
-/* Red accent on labels (Age:, Birthday:, etc.) matched from reference */
-.personal-info strong {
-    color: #b74b4b;
-    font-weight: 600;
-}
-
-/* Interests section styling based on reference video */
-.interests h4 {
-    font-size: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
-    color: #fff;
-    font-weight: 500;
-}
-
-/* Replicates the horizontal row of distinct items from the reference image */
-.interest-icons {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-}
-
-/* Vertical stack for individual icon+label pairs */
-.interest-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
-    
-    color: #b74b4b; /* Icon is primary red from video */
-    font-size: 2.8rem; /* Prominent icon size */
-    transition: 0.3s ease;
-}
-
-/* The label under the icon, also matched from reference */
-.interest-item span {
-    font-size: 1.2rem;
-    color: #fff; /* Label text is white */
-    font-weight: 500;
-}
-
-/* Interaction for the interest items */
-.interest-item:hover {
-    transform: translateY(-5px);
-    text-shadow: 0 0 10px #b74b4b;
-}
-
-/* Horizontal Education Badges to match video aesthetic */
 .edu-row {
     display: flex;
     justify-content: center;
     gap: 3rem;
     flex-wrap: wrap;
     margin-top: 3rem;
-    width: 100%;
 }
 
 .edu-badge {
@@ -481,131 +256,52 @@ span{
     transition: 0.3s ease;
 }
 
-.edu-badge:hover {
-    border-color: #b74b4b;
-    transform: translateY(-10px);
-}
+.edu-badge:hover { border-color: #b74b4b; transform: translateY(-10px); }
+.edu-badge img { width: 80px; height: 80px; border-radius: 50%; border: 2px solid #b74b4b; object-fit: cover; margin-bottom: 1.5rem; }
 
-.edu-badge img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%; /* Circular logos like the video reference */
-    object-fit: cover;
-    margin-bottom: 1.5rem;
-    border: 2px solid #b74b4b;
-}
-
-.edu-badge h4 {
-    font-size: 1.5rem;
-    color: #fff;
-    margin-bottom: 0.5rem;
-}
-
-.edu-badge p {
-    font-size: 1.3rem;
-    color: #ccc;
-    margin-bottom: 0.5rem;
-}
-
-.edu-badge span {
-    font-size: 1.2rem;
-    color: #b74b4b;
-    font-weight: 600;
-}
-
-/* Mobile Responsive adjustment */
-@media (max-width: 768px) {
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .about-content h2.heading {
-        text-align: center;
-    }
-    
-    .interest-icons {
-        justify-content: center;
-    }
-}
-.about-container {
+/* --- Contact Section --- */
+.contact-container {
     display: flex;
-    align-items: center; /* Vertical centering */
-    gap: 5rem;
-    padding: 4rem 0;
-}
-
-.about-img {
-    flex: 0 0 320px; /* Fixed width to maintain the portrait look */
-}
-
-.about-img img {
-    width: 100%;
-    /* Replicating the height and aspect ratio of the circled area */
-    height: 480px; 
-    object-fit: cover;
-    
-    /* Replicating the distinct visual frame */
-    border-radius: 40px; /* Large, smooth curves as seen in reference */
-    border: 2px solid #b74b4b; /* Red accent border */
-    
-    /* Subtle outer glow to match the screenshot light effect */
-    box-shadow: 0 0 20px rgba(183, 75, 75, 0.4);
-    transition: transform 0.4s ease;
-}
-
-.about-img img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 35px rgba(183, 75, 75, 0.6);
-}
-
-/* Responsiveness: Ensures the tall image fits mobile screens */
-@media (max-width: 768px) {
-    .about-img img {
-        height: 400px;
-        width: 280px;
-    }
-}
-/* --- Final Alignment Overrides --- */
-
-/* Ensures the image and text sit side-by-side with the correct spacing */
-.about-container {
-    display: flex;
-    align-items: flex-start; /* Keeps text aligned to the top of the image */
-    justify-content: flex-start; 
-    gap: 5rem; /* Space between the portrait and the bio */
-    max-width: 1200px;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
     margin: 0 auto;
-    text-align: left; /* Forces all children to inherit left alignment */
+    background: #0f0f0f;
+    padding: 6rem;
+    border-radius: 1rem;
+    border: 1px solid #222;
+    transition: 0.3s ease;
 }
 
-/* Replicates the portrait dimensions from the screenshot */
-.about-img {
-    flex: 0 0 320px; 
-}
+.contact-container:hover { border-color: #b74b4b; }
 
-/* Strictly left-aligns the heading and paragraphs */
-.about-content {
-    flex: 1;
-    text-align: left;
-}
-
-.about-content h2.heading {
-    text-align: left;
-    margin-bottom: 2rem;
-}
-
-/* Stacks the info items vertically to match the reference image */
-.personal-info {
+.contact-info {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
-    margin-bottom: 2.5rem;
+    align-items: center;
+    gap: 2rem;
 }
 
-/* Fixes the interest icons to start from the left edge */
-.interest-icons {
+.detail-item {
     display: flex;
-    justify-content: flex-start; 
-    gap: 2rem;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 991px) {
+    .home { flex-direction: column; text-align: center; gap: 4rem; }
+    .home-img img { width: 50vw; }
+}
+
+@media (max-width: 768px) {
+    .about-container { flex-direction: column; align-items: center; text-align: center; }
+    .about-content { text-align: center; }
+    .about-content h2.heading { text-align: center; }
+    .interest-icons { justify-content: center; }
+    .about-img img { height: 400px; width: 280px; }
+    .contact-container { padding: 2rem; flex-direction: column; }
 }
