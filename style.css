@@ -73,7 +73,6 @@ section {
     justify-content: center;
     align-items: center;
     gap: 8rem;
-    background-color: black;
 }
 
 .home-content h1 { font-size: 6rem; font-weight: 700; line-height: 1.3; }
@@ -121,12 +120,6 @@ section {
     transition: 0.3s ease;
 }
 
-.btn:hover {
-    background-color: #b74b4b;
-    color: black;
-    box-shadow: 0 0 25px #b74b4b;
-}
-
 /* --- Typing Animation --- */
 .typing-text span::before {
     content: "";
@@ -155,7 +148,6 @@ section {
     gap: 5rem;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 4rem 0;
 }
 
 .about-img { flex: 0 0 320px; }
@@ -170,14 +162,8 @@ section {
     transition: 0.4s ease;
 }
 
-.about-img img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 35px rgba(183, 75, 75, 0.6);
-}
-
 .about-content { flex: 1; text-align: left; }
-.about-content h2.heading { text-align: left; margin-bottom: 2rem; }
-.about-content p { font-size: 1.6rem; line-height: 1.6; margin-bottom: 2rem; color: #ccc; }
+.about-content p { font-size: 1.6rem; line-height: 1.6; color: #ccc; }
 
 .personal-info {
     display: flex;
@@ -186,11 +172,10 @@ section {
     margin-bottom: 2.5rem;
 }
 
-.personal-info strong { color: #b74b4b; font-weight: 600; }
+.personal-info strong { color: #b74b4b; }
 
 .interest-icons {
     display: flex;
-    justify-content: flex-start;
     gap: 2rem;
     flex-wrap: wrap;
 }
@@ -202,11 +187,9 @@ section {
     gap: 0.8rem;
     color: #b74b4b;
     font-size: 2.8rem;
-    transition: 0.3s ease;
 }
 
-.interest-item span { font-size: 1.2rem; color: #fff; font-weight: 500; }
-.interest-item:hover { transform: translateY(-5px); text-shadow: 0 0 10px #b74b4b; }
+.interest-item span { font-size: 1.2rem; color: #fff; }
 
 /* --- Portfolio & Education --- */
 .portfolio-tabs {
@@ -220,8 +203,7 @@ section {
     max-width: 800px;
 }
 
-.tab-item { cursor: pointer; padding: 1.5rem 3rem; text-align: center; transition: 0.3s; border-radius: 1rem; color: #888; }
-.tab-item i { font-size: 2.2rem; display: block; margin-bottom: 0.5rem; }
+.tab-item { cursor: pointer; padding: 1.5rem 3rem; color: #888; transition: 0.3s; border-radius: 1rem; }
 .tab-item.active { background: #1a1a1a; color: #b74b4b; }
 
 .portfolio-grid { display: none; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
@@ -232,19 +214,13 @@ section {
     border-radius: 1.5rem;
     padding: 2.5rem;
     border: 1px solid #222;
-    transition: 0.3s;
 }
-
-.grid-card:hover { border-color: #b74b4b; transform: translateY(-5px); }
-.grid-card img { width: 100%; border-radius: 1rem; aspect-ratio: 16/9; object-fit: cover; }
-.grid-card h3 { font-size: 2.2rem; color: #b74b4b; margin: 1.5rem 0; }
 
 .edu-row {
     display: flex;
     justify-content: center;
     gap: 3rem;
     flex-wrap: wrap;
-    margin-top: 3rem;
 }
 
 .edu-badge {
@@ -254,33 +230,20 @@ section {
     padding: 2rem;
     border-radius: 15px;
     border: 1px solid #333;
-    transition: 0.3s ease;
 }
 
-.edu-badge:hover { border-color: #b74b4b; transform: translateY(-10px); }
 .edu-badge img { width: 80px; height: 80px; border-radius: 50%; border: 2px solid #b74b4b; object-fit: cover; margin-bottom: 1.5rem; }
 
 /* --- Contact Section --- */
 .contact-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     max-width: 800px;
     margin: 0 auto;
     background: #0f0f0f;
     padding: 6rem;
     border-radius: 1rem;
     border: 1px solid #222;
-    transition: 0.3s ease;
-}
-
-.contact-container:hover { border-color: #b74b4b; }
-
-.contact-info {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
+    justify-content: center;
 }
 
 .detail-item {
@@ -288,40 +251,41 @@ section {
     align-items: center;
     gap: 1.5rem;
     font-size: 1.8rem;
-    margin-bottom: 1.5rem;
     color: #fff;
+    word-break: break-all; /* Prevents long emails from breaking mobile */
 }
 
-/* --- Media Queries (Responsiveness) --- */
-
-@media (max-width: 1200px) {
-    html { font-size: 55%; }
-}
+/* --- Mobile Responsiveness (Fixed Overlaps) --- */
 
 @media (max-width: 991px) {
-    header { padding: 2rem 4%; }
+    header { padding: 2rem 4%; margin-top: 0; }
     section { padding: 10rem 4% 5rem; }
-    .home { flex-direction: column; text-align: center; gap: 4rem; }
-    .home-img img { width: 45vw; }
+    .home { flex-direction: column-reverse; text-align: center; gap: 4rem; }
+    .home-img img { width: 50vw; }
+    .home-content h1 { font-size: 5rem; }
 }
 
 @media (max-width: 768px) {
-    .heading { font-size: 4rem; }
+    .heading { font-size: 3.5rem; }
+    .home-content h1 { font-size: 4rem; }
+    .home-content h3 { font-size: 2.5rem; }
+    
     .about-container { flex-direction: column; align-items: center; text-align: center; }
-    .about-content { text-align: center; }
+    .about-img { flex: 0 0 auto; width: 100%; max-width: 300px; }
+    .about-img img { height: auto; aspect-ratio: 2/3; }
+    .about-content { width: 100%; }
     .about-content h2.heading { text-align: center; }
     .interest-icons { justify-content: center; }
-    .about-img img { height: 400px; width: 280px; }
+
+    .portfolio-tabs { flex-wrap: wrap; gap: 1rem; padding: 0.5rem; }
+    .tab-item { padding: 1rem; font-size: 1.4rem; flex: 1 1 100px; }
     
-    .portfolio-tabs { flex-wrap: wrap; gap: 1rem; }
-    .tab-item { padding: 1rem 2rem; font-size: 1.4rem; }
-    
-    .contact-container { padding: 3rem 2rem; }
-    .detail-item { font-size: 1.6rem; }
+    .contact-container { padding: 3rem 2rem; width: 100%; }
+    .detail-item { font-size: 1.4rem; flex-direction: column; text-align: center; }
 }
 
 @media (max-width: 450px) {
     html { font-size: 50%; }
     .home-img img { width: 70vw; }
-    header { margin-top: 10px; }
+    nav a { margin-left: 1.5rem; font-size: 1.5rem; }
 }
