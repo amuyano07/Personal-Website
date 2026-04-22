@@ -25,9 +25,8 @@ body {
 
 span { color: #b74b4b; }
 
-/* --- Layout Components --- */
+/* --- Navigation --- */
 header {
-    margin-top: 20px;
     position: fixed;
     top: 0;
     left: 0;
@@ -39,6 +38,7 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    margin-top: 20px;
 }
 
 nav a {
@@ -55,6 +55,7 @@ nav a:hover, nav a.active {
     border-bottom: 3px solid #b74b4b;
 }
 
+/* --- Section Defaults --- */
 section {
     min-height: 100vh;
     padding: 10rem 9% 5rem;
@@ -125,6 +126,11 @@ section {
     color: black;
     box-shadow: 0 0 25px #b74b4b;
 }
+.home-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem; 
+}
 
 /* --- Typing Animation --- */
 .typing-text span::before {
@@ -140,12 +146,12 @@ section {
     81%, 100% { content: "BSIT Student"; }
 }
 
-/* --- About Section (Unified) --- */
+/* --- About Section --- */
 .about {
+    background-color: #080808;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #080808;
 }
 
 .about-container {
@@ -185,7 +191,17 @@ section {
     margin-bottom: 2.5rem;
 }
 
+.personal-info p { font-size: 1.6rem; color: #ccc; }
 .personal-info strong { color: #b74b4b; font-weight: 600; }
+
+/* Interests Original Styles */
+.interests h4 {
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    font-weight: 500;
+}
 
 .interest-icons {
     display: flex;
@@ -280,28 +296,66 @@ section {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    width: 100%;
 }
 
 .detail-item {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; 
     gap: 1.5rem;
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
     color: #fff;
+    text-align: center;
+    word-break: break-word; 
 }
 
-/* --- Mobile Responsive --- */
+/* --- Media Queries --- */
 @media (max-width: 991px) {
+    header { padding: 1.5rem 4%; }
     .home { flex-direction: column; text-align: center; gap: 4rem; }
-    .home-img img { width: 50vw; }
+    .home-img img { width: 45vw; }
+    
+    /* This centers your buttons when the text centers */
+    .home-btns {
+        justify-content: center; 
+    }
 }
 
 @media (max-width: 768px) {
+    /* Prevents the logo and nav links from overlapping */
+    header {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2rem;
+    }
+    nav a {
+        margin: 0 1rem;
+        font-size: 1.6rem;
+    }
+
+    .heading { font-size: 4rem; }
     .about-container { flex-direction: column; align-items: center; text-align: center; }
     .about-content { text-align: center; }
     .about-content h2.heading { text-align: center; }
     .interest-icons { justify-content: center; }
     .about-img img { height: 400px; width: 280px; }
-    .contact-container { padding: 2rem; flex-direction: column; }
+    
+    .contact-container { padding: 4rem 2rem; width: 95%; }
+}
+
+@media (max-width: 480px) {
+    .home-img img { width: 65vw; }
+    
+    /* Stacks buttons vertically on small phones */
+    .home-btns {
+        flex-direction: column;
+        width: 100%;
+        gap: 1.5rem;
+    }
+    .home-btns .btn {
+        width: 100%; 
+    }
 }
