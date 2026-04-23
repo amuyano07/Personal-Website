@@ -351,3 +351,24 @@ section {
     .contact-info { gap: 1.5rem; }
     .detail-item { font-size: 1.4rem; }
 }
+section {
+    min-height: auto !important; 
+    padding: 12rem 9% 8rem !important; 
+}
+
+.heading {
+    margin-top: 4rem !important;
+    margin-bottom: 6rem !important;
+}
+
+.education-section {
+    margin-top: 10rem !important;
+}
+
+.portfolio-grid {
+    margin-top: 4rem !important;
+}
+
+.home {
+    min-height: 100vh !important;
+}
