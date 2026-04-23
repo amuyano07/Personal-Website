@@ -303,21 +303,13 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-<<<<<<< HEAD
     flex-wrap: wrap; 
-=======
-    flex-wrap: wrap; /* Prevents text overlap by wrapping if needed */
->>>>>>> cdc16e7c54985164719117a94bd8b8440cbe439d
     gap: 1.5rem;
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
     color: #fff;
     text-align: center;
-<<<<<<< HEAD
     word-break: break-word; 
-=======
-    word-break: break-word; /* Ensures long emails/links don't break layout */
->>>>>>> cdc16e7c54985164719117a94bd8b8440cbe439d
 }
 
 /* --- Media Queries --- */
@@ -325,16 +317,13 @@ section {
     header { padding: 1.5rem 4%; }
     .home { flex-direction: column; text-align: center; gap: 4rem; }
     .home-img img { width: 45vw; }
-<<<<<<< HEAD
     
-    /* This centers your buttons when the text centers */
     .home-btns {
         justify-content: center; 
     }
 }
 
 @media (max-width: 768px) {
-    /* Prevents the logo and nav links from overlapping */
     header {
         flex-direction: column;
         gap: 1.5rem;
@@ -344,12 +333,7 @@ section {
         margin: 0 1rem;
         font-size: 1.6rem;
     }
-
-=======
-}
-
-@media (max-width: 768px) {
->>>>>>> cdc16e7c54985164719117a94bd8b8440cbe439d
+    
     .heading { font-size: 4rem; }
     .about-container { flex-direction: column; align-items: center; text-align: center; }
     .about-content { text-align: center; }
@@ -358,23 +342,6 @@ section {
     .about-img img { height: 400px; width: 280px; }
     
     .contact-container { padding: 4rem 2rem; width: 95%; }
-<<<<<<< HEAD
-}
-
-@media (max-width: 480px) {
-    .home-img img { width: 65vw; }
-    
-    /* Stacks buttons vertically on small phones */
-    .home-btns {
-        flex-direction: column;
-        width: 100%;
-        gap: 1.5rem;
-    }
-    .home-btns .btn {
-        width: 100%; 
-    }
-}
-=======
     .detail-item { font-size: 1.5rem; gap: 1rem; }
 }
 
@@ -384,4 +351,3 @@ section {
     .contact-info { gap: 1.5rem; }
     .detail-item { font-size: 1.4rem; }
 }
->>>>>>> cdc16e7c54985164719117a94bd8b8440cbe439d
