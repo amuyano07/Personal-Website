@@ -16,13 +16,39 @@
         </a>
     </li>
 
-    <nav>
-        <a href="#home" class="active">Home</a>
-        <a href="#about">About</a>
-        <a href="#portfolio">Projects</a> 
-        <a href="#contact">Contact</a>
+    <div class="nav-container" style="display: flex; align-items: center; gap: 2rem;">
+        <nav>
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#portfolio">Projects</a> 
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="menu-button" onclick="showSidebar()" style="cursor: pointer; display: flex; align-items: center;">
+            <img src="menu_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Menu" style="width: 28px;">
+        </div>
+    </div>
+
+    <nav class="sidebar">
+        <div class="close-button" onclick="hideSidebar()">
+            <img src="close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Close" style="width: 24px;">
+        </div>
+        <a href="#home" onclick="hideSidebar()">Home</a>
+        <a href="#about" onclick="hideSidebar()">About</a>
+        <a href="#portfolio" onclick="hideSidebar()">Projects</a>
+        <a href="#contact" onclick="hideSidebar()">Contact</a>
     </nav>
 </header>
+
+<nav class="sidebar">
+    <div class="close-button" onclick="hideSidebar()">
+        <img src="close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Close">
+    </div>
+    <a href="#home" onclick="hideSidebar()">Home</a>
+    <a href="#about" onclick="hideSidebar()">About</a>
+    <a href="#portfolio" onclick="hideSidebar()">Projects</a>
+    <a href="#contact" onclick="hideSidebar()">Contact</a>
+</nav>
 
 <section class="home" id="home">
     <div class="home-img">
@@ -57,7 +83,7 @@
 
         <div class="about-content">
             <p>
-                A highly motivated first-year student pursuing a Bachelor of Science in Information Technology at Phinma Araullo University.
+                I am a highly motivated first-year student pursuing a Bachelor of Science in Information Technology at Phinma Araullo University.
                 I have a strong foundation in ICT from my time at Rizal National High School and am passionate about using my skills to build accessible, user-friendly solutions.
             </p>
             
@@ -111,6 +137,71 @@
             </div>
         </div>
     </div>
+    <div class="skills-section">
+        <h2 class="heading">My <span>Skills</span></h2>
+        
+        <div class="skills-container">
+            <div class="skills-col">
+                <div class="skill-box">
+                    <div class="skill-info">
+                        <p class="skill-name">Basic Programming</p>
+                        <p class="skill-percent">60%</p>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 60%;"></div>
+                    </div>
+                </div>
+                <div class="skill-box">
+                    <div class="skill-info">
+                        <p class="skill-name">Debugging</p>
+                        <p class="skill-percent">75%</p>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 75%;"></div>
+                    </div>
+                </div>
+                <div class="skill-box">
+                    <div class="skill-info">
+                        <p class="skill-name">Encoding</p>
+                        <p class="skill-percent">90%</p>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 90%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-col">
+                <div class="skill-box">
+                    <div class="skill-info">
+                        <p class="skill-name">HTML</p>
+                        <p class="skill-percent">40%</p>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 40%;"></div>
+                    </div>
+                </div>
+                <div class="skill-box">
+                    <div class="skill-info">
+                        <p class="skill-name">CSS</p>
+                        <p class="skill-percent">30%</p>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 30%;"></div>
+                    </div>
+                </div>
+                <div class="skill-box">
+                    <div class="skill-info">
+                        <p class="skill-name">JavaScript</p>
+                        <p class="skill-percent">10%</p>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 10%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section class="content-section" id="portfolio">
@@ -145,19 +236,17 @@
 <section class="content-section" id="contact">
     <h2 class="heading">Contact <span>Me</span></h2>
     
-    <div class="contact-container simple-contact">
+    <div class="contact-container">
         <div class="contact-info">
-            <div class="contact-details">
-                <div class="detail-item">
-                    <i class="fa-solid fa-paper-plane"></i>
-                    <span>aldrineruzzelmuyano@gmail.com</span>
-                </div>
-                <div class="detail-item">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>09158957513</span>
-                </div>
+            <div class="detail-item">
+                <i class="fa-solid fa-paper-plane"></i>
+                <p>aldrineruzzelmuyano@gmail.com</p>
             </div>
-            
+            <div class="detail-item">
+                <i class="fa-solid fa-phone"></i>
+                <p>09158957513</p>
+            </div>
+
             <div class="social-icons mini">
                 <a href="https://www.facebook.com/aldrine.muyano/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
                 <a href="https://github.com/amuyano07" target="_blank"><i class="fa-brands fa-github"></i></a>
@@ -165,7 +254,7 @@
                 <a href="https://discordapp.com/users/662627627701370880" target="_blank"><i class="fa-brands fa-discord"></i></a>
             </div>
 
-            <a href="MUYANO_ALDRINE_RESUME.pdf" download class="btn download-cv">Download Resume</a>
+            <a href="MUYANO_ALDRINE_RESUME.pdf" download class="btn">Download Resume</a>
         </div>
     </div>
 </section>
@@ -175,8 +264,10 @@
     const navLinks = document.querySelectorAll('header nav a');
 
     window.onscroll = () => {
+        let top = window.scrollY;
+
+        // Standard check for sections
         sections.forEach(sec => {
-            let top = window.scrollY;
             let offset = sec.offsetTop - 150;
             let height = sec.offsetHeight;
             let id = sec.getAttribute('id');
@@ -184,12 +275,29 @@
             if(top >= offset && top < offset + height) {
                 navLinks.forEach(links => {
                     links.classList.remove('active');
-                    const targetLink = document.querySelector('header nav a[href*=' + id + ']');
-                    if(targetLink) targetLink.classList.add('active');
                 });
+                const targetLink = document.querySelector('header nav a[href*=' + id + ']');
+                if(targetLink) targetLink.classList.add('active');
             }
         });
+
+        // Bottom of page check for the Contact section
+        let isAtBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10;
+        if (isAtBottom) {
+            navLinks.forEach(links => links.classList.remove('active'));
+            const contactLink = document.querySelector('header nav a[href*="#contact"]');
+            if (contactLink) contactLink.classList.add('active');
+        }
     };
+</script>
+<script>
+    function showSidebar() {
+        document.querySelector('.sidebar').style.right = '0';
+    }
+
+    function hideSidebar() {
+        document.querySelector('.sidebar').style.right = '-100%';
+    }
 </script>
 </body>
 </html>

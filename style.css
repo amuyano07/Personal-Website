@@ -1,4 +1,4 @@
-/* --- Global Styles & Typography --- */
+/*Global Styles & Typography*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
 * {
@@ -25,7 +25,7 @@ body {
 
 span { color: #b74b4b; }
 
-/* --- Navigation --- */
+/*Navigation*/
 header {
     position: fixed;
     top: 0;
@@ -55,7 +55,87 @@ nav a:hover, nav a.active {
     border-bottom: 3px solid #b74b4b;
 }
 
-/* --- Section Defaults --- */
+.desktop-nav {
+    display: flex !important;
+}
+
+.desktop-nav a {
+    margin-left: 3rem;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.menu-button {
+    display: block; 
+    margin-left: 2rem;
+}
+
+/* Sidebar Container */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%; 
+    height: 100vh;
+    width: 280px;
+    
+    background-color: rgba(0, 0, 0, 0.6); 
+    
+    backdrop-filter: blur(10px); 
+    
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease;
+    border: none; 
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 280px;
+    background-color: rgba(0, 0, 0, 0.6); 
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+}
+
+.sidebar a {
+    padding: 2rem 3rem;
+    font-size: 1.8rem;
+    color: white !important;
+    text-decoration: none;
+    transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+}
+
+.sidebar a:hover {
+    color: #b74b4b !important;
+    background-color: rgba(183, 75, 75, 0.1);
+}
+
+.close-button {
+    cursor: pointer;
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: flex-start; 
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+}
+
+nav a.active {
+    color: #b74b4b;
+    border-bottom: 3px solid #b74b4b;
+}
+
+/*Section Defaults*/
 section {
     min-height: 100vh;
     padding: 10rem 9% 5rem;
@@ -67,7 +147,7 @@ section {
     text-align: center;
 }
 
-/* --- Home Section --- */
+/*Home Section*/
 .home {
     display: flex;
     justify-content: center;
@@ -132,7 +212,7 @@ section {
     gap: 2rem; 
 }
 
-/* --- Typing Animation --- */
+/*Typing Animation*/
 .typing-text span::before {
     content: "";
     animation: words 20s infinite;
@@ -146,7 +226,7 @@ section {
     81%, 100% { content: "BSIT Student"; }
 }
 
-/* --- About Section --- */
+/*About Section*/
 .about {
     background-color: #080808;
     display: flex;
@@ -194,7 +274,6 @@ section {
 .personal-info p { font-size: 1.6rem; color: #ccc; }
 .personal-info strong { color: #b74b4b; font-weight: 600; }
 
-/* Interests Original Styles */
 .interests h4 {
     font-size: 2rem;
     margin-top: 2rem;
@@ -223,7 +302,7 @@ section {
 .interest-item span { font-size: 1.2rem; color: #fff; font-weight: 500; }
 .interest-item:hover { transform: translateY(-5px); text-shadow: 0 0 10px #b74b4b; }
 
-/* --- Portfolio & Education --- */
+/*Portfolio & Education*/
 .portfolio-tabs {
     display: flex;
     justify-content: center;
@@ -275,66 +354,74 @@ section {
 .edu-badge:hover { border-color: #b74b4b; transform: translateY(-10px); }
 .edu-badge img { width: 80px; height: 80px; border-radius: 50%; border: 2px solid #b74b4b; object-fit: cover; margin-bottom: 1.5rem; }
 
-/* --- Contact Section --- */
 .contact-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
     background: #0f0f0f;
-    padding: 6rem;
-    border-radius: 1rem;
+    padding: 4rem;
+    border-radius: 20px;
     border: 1px solid #222;
+    text-align: center;
     transition: 0.3s ease;
 }
 
-.contact-container:hover { border-color: #b74b4b; }
+.contact-container:hover {
+    border-color: #b74b4b;
+    box-shadow: 0 0 20px rgba(183, 75, 75, 0.1);
+}
 
 .contact-info {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
-    width: 100%;
+    gap: 2.5rem;
 }
 
 .detail-item {
     display: flex;
     align-items: center;
-    justify-content: center;
-<<<<<<< HEAD
-    flex-wrap: wrap; 
-=======
-    flex-wrap: wrap; /* Prevents text overlap by wrapping if needed */
->>>>>>> cdc16e7c54985164719117a94bd8b8440cbe439d
     gap: 1.5rem;
     font-size: 1.8rem;
-    margin-bottom: 1.5rem;
     color: #fff;
-    text-align: center;
-<<<<<<< HEAD
-    word-break: break-word; 
-=======
-    word-break: break-word; /* Ensures long emails/links don't break layout */
->>>>>>> cdc16e7c54985164719117a94bd8b8440cbe439d
 }
 
-/* --- Media Queries --- */
+.detail-item i {
+    color: #b74b4b;
+    font-size: 2.2rem;
+}
+
+.social-icons.mini {
+    margin: 1rem 0;
+}
+
+.social-icons.mini a {
+    margin: 0 1rem;
+    width: 4.5rem;
+    height: 4.5rem;
+}
+
+/* Mobile Adjustment */
+@media (max-width: 480px) {
+    .contact-container {
+        padding: 3rem 1.5rem;
+    }
+    .detail-item {
+        font-size: 1.5rem;
+    }
+}
+
+/*Media Queries*/
 @media (max-width: 991px) {
     header { padding: 1.5rem 4%; }
     .home { flex-direction: column; text-align: center; gap: 4rem; }
     .home-img img { width: 45vw; }
-<<<<<<< HEAD
     
-    /* This centers your buttons when the text centers */
     .home-btns {
         justify-content: center; 
     }
 }
 
 @media (max-width: 768px) {
-    /* Prevents the logo and nav links from overlapping */
     header {
         flex-direction: column;
         gap: 1.5rem;
@@ -344,12 +431,7 @@ section {
         margin: 0 1rem;
         font-size: 1.6rem;
     }
-
-=======
-}
-
-@media (max-width: 768px) {
->>>>>>> cdc16e7c54985164719117a94bd8b8440cbe439d
+    
     .heading { font-size: 4rem; }
     .about-container { flex-direction: column; align-items: center; text-align: center; }
     .about-content { text-align: center; }
@@ -358,23 +440,6 @@ section {
     .about-img img { height: 400px; width: 280px; }
     
     .contact-container { padding: 4rem 2rem; width: 95%; }
-<<<<<<< HEAD
-}
-
-@media (max-width: 480px) {
-    .home-img img { width: 65vw; }
-    
-    /* Stacks buttons vertically on small phones */
-    .home-btns {
-        flex-direction: column;
-        width: 100%;
-        gap: 1.5rem;
-    }
-    .home-btns .btn {
-        width: 100%; 
-    }
-}
-=======
     .detail-item { font-size: 1.5rem; gap: 1rem; }
 }
 
@@ -384,4 +449,103 @@ section {
     .contact-info { gap: 1.5rem; }
     .detail-item { font-size: 1.4rem; }
 }
->>>>>>> cdc16e7c54985164719117a94bd8b8440cbe439d
+
+header {
+    margin-top: 0 !important;
+    padding: 1.5rem 9% !important;
+}
+
+section {
+    min-height: auto !important; 
+    padding: 8rem 9% 6rem !important;
+    transition: all 0.4s ease;
+}
+
+.home {
+    min-height: 100vh !important;
+    padding-top: 6rem !important;
+}
+
+.heading {
+    margin-top: 2rem !important;
+    margin-bottom: 3.5rem !important;
+}
+
+.education-section {
+    margin-top: 8rem !important;
+}
+
+nav a, .btn, .social-icons a, .grid-card {
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+/*SKILLS SECTION*/
+.skills-section {
+    margin-top: 15rem; 
+    width: 100%;
+    padding-bottom: 5rem;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 6rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.skills-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.skill-box {
+    width: 100%;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.skill-info .skill-name {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.skill-info .skill-percent {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #b74b4b;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 1rem;
+    background-color: #1e1e1e; 
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+.skill-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #b74b4b; 
+    border-radius: 1rem;
+    transition: width 1.5s ease-in-out;
+    box-shadow: 0 0 10px rgba(183, 75, 75, 0.4); 
+}
+
+@media (max-width: 768px) {
+    .skills-container {
+        flex-direction: column;
+        gap: 3rem;
+    }
+}
