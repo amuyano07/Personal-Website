@@ -138,6 +138,10 @@ nav a.active {
 section {
     min-height: 100vh;
     padding: 10rem 9% 5rem;
+    outline: 1px solid rgba(255, 255, 255, 0.1);
+    outline-offset: -15px; 
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.02);
 }
 
 .heading {
@@ -545,5 +549,42 @@ nav a, .btn, .social-icons a, .grid-card {
     .skills-container {
         flex-direction: column;
         gap: 3rem;
+    }
+}
+
+header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 1.5rem 9% !important; 
+}
+
+header li {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.nav-container {
+    display: flex !important;
+    align-items: center !important;
+    margin-left: auto !important; 
+}
+
+.menu-button {
+    display: none !important; 
+}
+
+@media (max-width: 768px) {
+    .nav-container nav {
+        display: none !important;
+    }
+
+    .menu-button {
+        display: flex !important; 
+    }
+
+    header {
+        flex-direction: row !important; 
+        justify-content: space-between !important;
     }
 }
