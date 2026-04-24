@@ -266,7 +266,6 @@
     window.onscroll = () => {
         let top = window.scrollY;
 
-        // Standard check for sections
         sections.forEach(sec => {
             let offset = sec.offsetTop - 150;
             let height = sec.offsetHeight;
@@ -281,7 +280,6 @@
             }
         });
 
-        // Bottom of page check for the Contact section
         let isAtBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10;
         if (isAtBottom) {
             navLinks.forEach(links => links.classList.remove('active'));
