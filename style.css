@@ -136,8 +136,8 @@ nav a.active {
 }
 
 section {
-    min-height: 100vh;
-    padding: 10rem 9% 5rem;
+    min-height: auto; 
+    padding: 6rem 9% 4rem; 
     outline: 1px solid rgba(255, 255, 255, 0.1);
     outline-offset: -15px; 
     border-radius: 15px;
@@ -146,7 +146,7 @@ section {
 
 .heading {
     font-size: 5rem;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     text-align: center;
 }
 
@@ -215,10 +215,27 @@ section {
     gap: 2rem; 
 }
 
-/*Typing Animation*/
-.typing-text span::before {
-    content: "";
+.typing-text span.animate-text {
+    position: relative;
+    color: #b74b4b;
+    white-space: nowrap; /
+}
+
+.typing-text span.animate-text::before {
+    content: "Aspiring Developer";
     animation: words 20s infinite;
+}
+
+.typing-text span.animate-text::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black; 
+    border-left: 3px solid #b74b4b; 
+    animation: typing-erase 4s steps(20) infinite;
 }
 
 @keyframes words {
@@ -229,6 +246,11 @@ section {
     81%, 100% { content: "BSIT Student"; }
 }
 
+@keyframes typing-erase {
+    0%, 10% { width: 100%; }       
+    40%, 60% { width: 0%; }        
+    90%, 100% { width: 100%; }     /
+}
 /*About Section*/
 .about {
     background-color: #080808;
@@ -263,9 +285,14 @@ section {
     box-shadow: 0 0 35px rgba(183, 75, 75, 0.6);
 }
 
-.about-content { flex: 1; text-align: left; }
-.about-content h2.heading { text-align: left; margin-bottom: 2rem; }
-.about-content p { font-size: 1.6rem; line-height: 1.6; margin-bottom: 2rem; color: #ccc; }
+.about-content p {
+    font-size: 1.6rem;
+    line-height: 1.8; 
+    margin-bottom: 2rem;
+    color: #ccc;
+    text-align: justify; 
+    max-width: 800px;
+}
 
 .personal-info {
     display: flex;
@@ -425,24 +452,35 @@ section {
 
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        gap: 1.5rem;
-        padding: 2rem;
+        flex-direction: row !important; 
+        justify-content: space-between !important;
     }
-    nav a {
-        margin: 0 1rem;
-        font-size: 1.6rem;
+
+    .about-container { 
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
     }
-    
-    .heading { font-size: 4rem; }
-    .about-container { flex-direction: column; align-items: center; text-align: center; }
-    .about-content { text-align: center; }
-    .about-content h2.heading { text-align: center; }
-    .interest-icons { justify-content: center; }
+
+    .personal-info {
+        grid-template-columns: 1fr; 
+        gap: 1rem;
+        justify-items: center; 
+    }
+
+    .interest-icons {
+        justify-content: center; 
+        gap: 2rem;
+    }
+
+    .about-content p { 
+        text-align: center; 
+        padding: 0 1.5rem;
+        margin: 0 auto 2rem;
+    }
+
     .about-img img { height: 400px; width: 280px; }
-    
     .contact-container { padding: 4rem 2rem; width: 95%; }
-    .detail-item { font-size: 1.5rem; gap: 1rem; }
 }
 
 @media (max-width: 480px) {
@@ -474,7 +512,7 @@ section {
 }
 
 .education-section {
-    margin-top: 8rem !important;
+    margin-top: 4rem !important;
 }
 
 nav a, .btn, .social-icons a, .grid-card {
@@ -482,7 +520,7 @@ nav a, .btn, .social-icons a, .grid-card {
 }
 /*SKILLS SECTION*/
 .skills-section {
-    margin-top: 15rem; 
+    margin-top: 5rem; 
     width: 100%;
     padding-bottom: 5rem;
 }
